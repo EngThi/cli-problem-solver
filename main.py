@@ -1,50 +1,52 @@
 import random
-import json
-import os
 
-def carregar_problemas():
-    if not os.path.exists('problems.json'):
-        print("⚠️  Arquivo 'problems.json' não encontrado!")
-        return []
-    
-    with open('problems.json', 'r', encoding='utf-8') as f:
-        return json.load(f)
+# 1. DADOS (O "Banco de Dados" na memória)
+# Lista de dicionários. Cada {} é um problema.
+problemas = [
+    {
+        "pergunta": "Quanto é 15 + 15?",
+        "resposta": "30",  # String para evitar erro de tipo
+        "dificuldade": "Facil"
+    },
+    {
+        "pergunta": "Qual a linguagem de cobra?",
+        "resposta": "python",
+        "dificuldade": "Facil"
+    },
+    {
+        "pergunta": "O que significa CPU?",
+        "resposta": "processador",
+        "dificuldade": "Medio"
+    }
+]
 
 def main():
     print("--- FLAVORTOWN NIBBLE QUIZ ---")
-    problemas = carregar_problemas()
+    print("1. Resolver um problema")
+    print("2. Sair")
     
-    if not problemas:
-        print("Nenhum problema carregado. Verifique o arquivo JSON.")
-        return
-
-    while True:
-        print("\n1. Resolver um problema")
-        print("2. Sair")
+    # Validação de input (Paranoia Saudável)
+    escolha = input("Escolha (1/2): ")
+    
+    if escolha == "1":
+        # Lógica de Sorteio
+        problema = random.choice(problemas)
         
-        # Validação de input (Paranoia Saudável)
-        escolha = input("Escolha (1/2): ")
+        print(f"\n[Nível: {problema['dificuldade']}]")
+        print(f"PERGUNTA: {problema['pergunta']}")
         
-        if escolha == "1":
-            # Lógica de Sorteio
-            problema = random.choice(problemas)
-            
-            print(f"\n[ID: {problema.get('id', '?')}]")
-            print(f"PERGUNTA: {problema['description']}")
-            
-            resposta_user = input("Sua resposta: ").strip()
-            
-            # Comparação (case-insensitive)
-            if resposta_user.lower() == problema['answer'].lower():
-                print("✅ ACERTOU! Mandou bem chef!")
-            else:
-                print(f"❌ ERROU! A resposta era: {problema['answer']}")
-                
-        elif escolha == "2":
-            print("Saindo da cozinha...")
-            break
+        resposta_user = input("Sua resposta: ").lower().strip() # .lower() ignora maiúsculas
+        
+        # Comparação
+        if resposta_user == problema['resposta']:
+            print("✅ ACERTOU! Mandou bem chef!")
         else:
-            print("Opção inválida. Tente de novo.")
+            print(f"❌ ERROU! A resposta era: {problema['resposta']}")
+            
+    elif escolha == "2":
+        print("Saindo da cozinha...")
+    else:
+        print("Opção inválida. Tente de novo.")
 
 # O ponto de entrada do Python
 if __name__ == "__main__":
