@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "description": "Qual o resultado de 15 + 27?",
+    "answer": "42"
+  },
+  {
+    "id": 2,
+    "description": "Escreva a palavra 'Python' toda em MAIÚSCULAS:",
+    "answer": "PYTHON"
+  },
+  {
+    "id": 3,
+    "description": "Se x = 10 e y = 5, qual o valor de x * y?",
+    "answer": "50"
+  }
+]
+
+
+
