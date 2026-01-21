@@ -1,6 +1,6 @@
 import random
 
-# 1. DADOS (O "Banco de Dados" na memória)
+# 1. DADOS (O Banco de Dados na memória)
 # Lista de dicionários. Cada {} é um problema.
 problemas = [
     {
@@ -29,7 +29,7 @@ def main():
     escolha = input("Escolha (1/2): ")
     
     if escolha == "1":
-        # Lógica de Sorteio
+        # Lógica de Sorteio 
         problema = random.choice(problemas)
         
         print(f"\n[Nível: {problema['dificuldade']}]")
@@ -44,10 +44,10 @@ def main():
             print(f"❌ ERROU! A resposta era: {problema['resposta']}")
             
     elif escolha == "2":
-        print("Saindo da cozinha...")
+        print("Saindo da cozinha... 🧑🏽‍🍳")
     else:
         print("Opção inválida. Tente de novo.")
-
+print("Teste final validação 💻🤔")
 # O ponto de entrada do Python
 if __name__ == "__main__":
     main()
