@@ -1,6 +1,6 @@
 # 👨‍🍳 Flavortown CLI Problem Solver
 
-Este é meu projeto para o **Flavortown (Hack Club)**. Sou iniciante total em programação e desenvolvi este quiz de terminal inteiramente em um smartphone (Android) usando **Termux** e **Acode**.
+Este é meu projeto para o **Nibbles (Hack Club)**. Sou iniciante total em programação e desenvolvi este quiz de terminal inteiramente em um smartphone (Android) usando **Termux** e **Acode**.
 
 ## 🚀 Como testar
 1. No terminal/Termux: `python main.py`
@@ -9,10 +9,11 @@ Este é meu projeto para o **Flavortown (Hack Club)**. Sou iniciante total em pr
 ## 🛠️ Tecnologias
 - **Lógica:** Python 3 + JSON
 - **Ambiente:** Mobile (Termux/Acode)
-- **Landing Page:** Web Design via Figma. 👇🏻 abaixo o link do protótipo
+- **Landing Page:** HTML/CSS (Hospedado via GitHub Pages)
 
-## 📝 Resumo do processo
-- **Desafio:** Aprender a manipular JSON e lógica de input em Python no Acode.
-- **Resultado:** Um CLI funcional e um protótipo de landing page com arte autêntica.
+## 📝 Devlog (Resumo)
+- **19/jan:** Decidi participar no último dia. 
+- **Desafio:** Aprender a manipular JSON e lógica de input em Python sem ter um PC.
+- **Resultado:** Um CLI funcional e uma landing page com arte autêntica.
 
-🔗 **Landing Page:** https://www.figma.com/site/p8z5loosi9Lo5yZ4ayrYFp/CLI-Problem-Solver?node-id=0-1&t=Ds3KhPCdMtdeXuaJ-1
+🔗 **Landing Page:** https://github.com/EngThi/cli-problem-solver.git
