@@ -3,25 +3,48 @@ from src import ui
 from src import problems
 from src import scoring
 
+QUESTIONS_PER_SESSION = 5
+
 def run_quiz():
     all_problems = problems.load_problems()
-    if not all_problems:
-        ui.console.print("[bold red]Nenhum problema encontrado no banco![/bold red]")
+    if not all_problems or len(all_problems) < QUESTIONS_PER_SESSION:
+        ui.console.print("[bold red]Problemas insuficientes no banco![/bold red]")
         return
     
-    problem = random.choice(all_problems)
-    ui.show_problem(problem)
+    # Seleciona 5 perguntas aleatórias sem repetir
+    session_problems = random.sample(all_problems, QUESTIONS_PER_SESSION)
+    score = 0
     
-    user_answer = ui.Prompt.ask("Sua resposta").strip().lower()
-    correct_answer = problem['answer'].strip().lower()
+    ui.console.print(f"\n[bold cyan]🏁 Iniciando sessão de treino com {QUESTIONS_PER_SESSION} questões...[/bold cyan]\n")
     
-    is_correct = user_answer == correct_answer
-    ui.show_feedback(is_correct, problem['answer'])
+    for i, problem in enumerate(session_problems, 1):
+        ui.show_problem(problem, current=i, total=QUESTIONS_PER_SESSION)
+        
+        user_answer = ui.Prompt.ask("Sua resposta").strip().lower()
+        correct_answer = problem['answer'].strip().lower()
+        
+        is_correct = user_answer == correct_answer
+        
+        # Lógica de Erro + IA Hint
+        if not is_correct:
+            if problem.get('hint') and ui.ask_for_hint():
+                ui.show_hint(problem['hint'])
+                # Segunda chance
+                user_answer = ui.Prompt.ask("Tente novamente").strip().lower()
+                is_correct = user_answer == correct_answer
+        
+        ui.show_feedback(is_correct, problem['answer'])
+        
+        if is_correct:
+            score += 1
+            
+    # Fim da Sessão
+    ui.console.print(f"[bold]Sessão encerrada![/bold] Você acertou [bold green]{score}/{QUESTIONS_PER_SESSION}[/bold green].")
     
-    if is_correct:
-        # Por agora só salva 1 ponto, podemos melhorar
-        user_name = ui.Prompt.ask("Seu nome para o ranking")
-        scoring.save_score(user_name, 1)
+    if score > 0:
+        user_name = ui.Prompt.ask("Seu nome para o ranking (Enter para pular)", default="")
+        if user_name:
+            scoring.save_score(user_name, score)
 
 def main_loop():
     ui.show_welcome()
@@ -33,5 +56,5 @@ def main_loop():
             scores = scoring.load_scores()
             ui.show_scores(scores)
         elif choice == "3":
-            ui.console.print("[yellow]Saindo da cozinha... 🧑🏽‍🍳[/yellow]")
+            ui.console.print("[yellow]Saindo do terminal... Até a próxima! 🧑🏽‍💻[/yellow]")
             break
