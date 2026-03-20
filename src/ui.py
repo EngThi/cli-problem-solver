@@ -14,7 +14,8 @@ def show_welcome():
 def show_problem(problem, current, total):
     diff_color = {"Easy": "green", "Medium": "yellow", "Hard": "red"}.get(problem.get("difficulty", "Easy"), "white")
     title = f"Questão {current}/{total} | Nível: [{diff_color}]{problem.get('difficulty', 'Normal')}[/{diff_color}]"
-    console.print(Panel(f"[bold white]>{/bold white] {problem['description']}", title=title, border_style="cyan"))
+    # Corrigido: usando colchetes [/bold white] para tags do Rich
+    console.print(Panel(f"[bold white]> [/bold white]{problem['description']}", title=title, border_style="cyan"))
 
 def show_feedback(is_correct, answer):
     if is_correct:
