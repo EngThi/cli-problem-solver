@@ -1,2 +1,1 @@
-rich
-google-generativeai
+rich>=13.0.0

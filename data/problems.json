@@ -1,352 +1,352 @@
 [
     {
         "id": 1,
-        "description": "Qual é a complexidade de tempo de busca em uma Hash Table (cenário médio)?",
+        "description": "What is the average time complexity for searching in a Hash Table?",
         "answer": "O(1)",
         "difficulty": "Easy",
-        "hint": "Pense no acesso direto usando chaves."
+        "hint": "Think about direct access using keys."
     },
     {
         "id": 2,
-        "description": "Qual estrutura de dados funciona no princípio LIFO (Last In, First Out)?",
-        "answer": "Pilha",
+        "description": "Which data structure follows the LIFO (Last In, First Out) principle?",
+        "answer": "Stack",
         "difficulty": "Easy",
-        "hint": "Imagine uma pilha de pratos."
+        "hint": "Like a stack of plates."
     },
     {
         "id": 3,
-        "description": "Qual estrutura de dados funciona no princípio FIFO (First In, First Out)?",
-        "answer": "Fila",
+        "description": "Which data structure follows the FIFO (First In, First Out) principle?",
+        "answer": "Queue",
         "difficulty": "Easy",
-        "hint": "Imagine uma fila de banco."
+        "hint": "Like a line at a bank."
     },
     {
         "id": 4,
-        "description": "Qual comando no Git salva as alterações no histórico local?",
+        "description": "Which Git command saves changes to the local history?",
         "answer": "commit",
         "difficulty": "Easy",
-        "hint": "É usado após o 'git add'."
+        "hint": "Used right after 'git add'."
     },
     {
         "id": 5,
-        "description": "Qual o operador booleano que retorna verdadeiro apenas se ambos os operandos forem verdadeiros?",
+        "description": "Which boolean operator returns true only if both operands are true?",
         "answer": "AND",
         "difficulty": "Easy",
-        "hint": "Significa 'E' em inglês."
+        "hint": "Think logic gates."
     },
     {
         "id": 6,
-        "description": "Em Python, qual tipo de dado é imutável: lista ou tupla?",
-        "answer": "Tupla",
+        "description": "In Python, which data type is immutable: list or tuple?",
+        "answer": "Tuple",
         "difficulty": "Easy",
-        "hint": "Usa parênteses () ao invés de colchetes []."
+        "hint": "Uses parentheses () instead of brackets []."
     },
     {
         "id": 7,
-        "description": "Qual linguagem de marcação é padrão para criar páginas web?",
+        "description": "What is the standard markup language for web pages?",
         "answer": "HTML",
         "difficulty": "Easy",
         "hint": "HyperText Markup Language."
     },
     {
         "id": 8,
-        "description": "Qual linguagem de estilo é usada para estilizar páginas web?",
+        "description": "Which language is used for styling web pages?",
         "answer": "CSS",
         "difficulty": "Easy",
         "hint": "Cascading Style Sheets."
     },
     {
         "id": 9,
-        "description": "Qual comando SQL é usado para extrair dados de um banco de dados?",
+        "description": "Which SQL command is used to extract data from a database?",
         "answer": "SELECT",
         "difficulty": "Easy",
-        "hint": "Ação de 'selecionar' em inglês."
+        "hint": "The most common query command."
     },
     {
         "id": 10,
-        "description": "Qual estrutura de repetição executa o bloco pelo menos uma vez antes de testar a condição?",
+        "description": "Which loop structure executes the block at least once before checking the condition?",
         "answer": "do-while",
         "difficulty": "Easy",
-        "hint": "'Faça' enquanto."
+        "hint": "Check the condition at the end."
     },
     {
         "id": 11,
-        "description": "Como é chamada a função que chama a si mesma?",
-        "answer": "Recursiva",
+        "description": "What is the name of a function that calls itself?",
+        "answer": "Recursive",
         "difficulty": "Easy",
-        "hint": "Lembra a palavra 'recursão'."
+        "hint": "Think about recursion."
     },
     {
         "id": 12,
-        "description": "Qual o valor booleano falso em Python?",
+        "description": "What is the boolean False value in Python?",
         "answer": "False",
         "difficulty": "Easy",
-        "hint": "Começa com F maiúsculo."
+        "hint": "Starts with a capital F."
     },
     {
         "id": 13,
-        "description": "Qual estrutura armazena pares de chave e valor em Python?",
-        "answer": "Dicionario",
+        "description": "Which structure stores key-value pairs in Python?",
+        "answer": "Dictionary",
         "difficulty": "Easy",
-        "hint": "Chama-se 'dict' no código."
+        "hint": "Also known as a 'dict'."
     },
     {
         "id": 14,
-        "description": "Qual símbolo é usado para comentários de linha única em Python?",
+        "description": "Which symbol is used for single-line comments in Python?",
         "answer": "#",
         "difficulty": "Easy",
-        "hint": "Também conhecido como 'cerquilha'."
+        "hint": "Known as a hash or pound symbol."
     },
     {
         "id": 15,
-        "description": "Qual é a saída de 2 ** 3 em Python?",
+        "description": "What is the output of 2 ** 3 in Python?",
         "answer": "8",
         "difficulty": "Easy",
-        "hint": "É uma operação de exponenciação."
+        "hint": "It's an exponentiation operation."
     },
     {
         "id": 16,
-        "description": "Qual o nome do algoritmo de ordenação que divide o array pela metade repetidamente?",
+        "description": "Which sorting algorithm repeatedly divides the array in half?",
         "answer": "Merge Sort",
         "difficulty": "Medium",
-        "hint": "Combina sub-listas ordenadas ('mesclar')."
+        "hint": "It 'merges' sorted sub-lists."
     },
     {
         "id": 17,
-        "description": "Qual o nome do paradigma de programação focado em estados e objetos?",
-        "answer": "Orientação a Objetos",
+        "description": "What programming paradigm focuses on states and objects?",
+        "answer": "Object Oriented",
         "difficulty": "Medium",
-        "hint": "POO."
+        "hint": "OOP."
     },
     {
         "id": 18,
-        "description": "Qual padrão arquitetural separa a aplicação em Model, View e Controller?",
+        "description": "Which architectural pattern separates Model, View, and Controller?",
         "answer": "MVC",
         "difficulty": "Medium",
-        "hint": "Sigla de 3 letras."
+        "hint": "A 3-letter acronym."
     },
     {
         "id": 19,
-        "description": "Qual a complexidade do pior caso do Quick Sort?",
+        "description": "What is the worst-case time complexity of Quick Sort?",
         "answer": "O(n^2)",
         "difficulty": "Medium",
-        "hint": "Ocorre quando o pivô é mal escolhido."
+        "hint": "Happens when the pivot selection is poor."
     },
     {
         "id": 20,
-        "description": "Em redes, qual protocolo é usado para transferência segura de hipertexto?",
+        "description": "In networking, which protocol is used for secure hypertext transfer?",
         "answer": "HTTPS",
         "difficulty": "Medium",
-        "hint": "O 'S' significa Secure."
+        "hint": "The 'S' stands for Secure."
     },
     {
         "id": 21,
-        "description": "Qual é a porta padrão para o protocolo HTTP?",
+        "description": "What is the default port for the HTTP protocol?",
         "answer": "80",
         "difficulty": "Medium",
-        "hint": "Um número entre 70 e 90."
+        "hint": "A number between 70 and 90."
     },
     {
         "id": 22,
-        "description": "Qual método HTTP é idiopotente e geralmente usado para atualizações parciais?",
+        "description": "Which HTTP method is idempotent and used for partial updates?",
         "answer": "PATCH",
         "difficulty": "Medium",
-        "hint": "Diferente do PUT, que substitui tudo."
+        "hint": "Different from PUT, which replaces the whole resource."
     },
     {
         "id": 23,
-        "description": "Qual estrutura de dados é mais adequada para implementar uma fila de prioridade?",
+        "description": "Which data structure is best for implementing a priority queue?",
         "answer": "Heap",
         "difficulty": "Medium",
-        "hint": "Estrutura em forma de árvore baseada em prioridades."
+        "hint": "A tree-based structure."
     },
     {
         "id": 24,
-        "description": "Como é chamado o problema de segurança onde dados não validados são enviados como comandos ao banco de dados?",
+        "description": "What is the name of the attack where malicious SQL is injected into a query?",
         "answer": "SQL Injection",
         "difficulty": "Medium",
-        "hint": "Injetar código malicioso."
+        "hint": "A common web vulnerability."
     },
     {
         "id": 25,
-        "description": "Qual verbo HTTP é recomendado para remover recursos?",
+        "description": "Which HTTP verb is used to remove resources?",
         "answer": "DELETE",
         "difficulty": "Medium",
-        "hint": "Ação de apagar."
+        "hint": "Direct and simple action."
     },
     {
         "id": 26,
-        "description": "Qual formato de serialização de dados usa tags angulares < > como o XML, mas é focado na web moderna?",
+        "description": "What data serialization format uses brackets {} and is highly popular in modern web APIs?",
         "answer": "JSON",
         "difficulty": "Medium",
         "hint": "JavaScript Object Notation."
     },
     {
         "id": 27,
-        "description": "Qual o conceito de esconder os detalhes internos e expor apenas as funcionalidades essenciais?",
-        "answer": "Encapsulamento",
+        "description": "What is the concept of hiding internal details and exposing only essential features?",
+        "answer": "Encapsulation",
         "difficulty": "Medium",
-        "hint": "Colocar dentro de uma 'cápsula'."
+        "hint": "Think 'capsule'."
     },
     {
         "id": 28,
-        "description": "Em SQL, qual cláusula agrupa resultados com o mesmo valor?",
+        "description": "In SQL, which clause groups results with the same value?",
         "answer": "GROUP BY",
         "difficulty": "Medium",
-        "hint": "Agrupar por."
+        "hint": "Used for aggregation."
     },
     {
         "id": 29,
-        "description": "O que a sigla API significa?",
+        "description": "What does API stand for?",
         "answer": "Application Programming Interface",
         "difficulty": "Medium",
-        "hint": "Interface de programação de aplicações."
+        "hint": "A way for software to talk."
     },
     {
         "id": 30,
-        "description": "Qual o princípio SOLID que diz que uma classe deve ter apenas uma razão para mudar?",
+        "description": "Which SOLID principle states a class should have only one reason to change?",
         "answer": "SRP",
         "difficulty": "Medium",
         "hint": "Single Responsibility Principle."
     },
     {
         "id": 31,
-        "description": "No Git, qual comando une uma branch a outra?",
+        "description": "In Git, which command joins two branches together?",
         "answer": "merge",
         "difficulty": "Medium",
-        "hint": "Ação de mesclar."
+        "hint": "To combine."
     },
     {
         "id": 32,
-        "description": "Qual o nome da técnica onde uma função armazena resultados caros em cache para evitar recálculos?",
+        "description": "What is the technique where a function caches expensive results to avoid recalculation?",
         "answer": "Memoization",
         "difficulty": "Medium",
-        "hint": "Lembra 'memorização'."
+        "hint": "Sounds like 'memorization'."
     },
     {
         "id": 33,
-        "description": "Em Docker, como se chama a instância em execução de uma imagem?",
+        "description": "In Docker, what is the running instance of an image called?",
         "answer": "Container",
         "difficulty": "Medium",
-        "hint": "Caixa de carga de navios."
+        "hint": "Portable unit."
     },
     {
         "id": 34,
-        "description": "Qual é a complexidade de tempo do algoritmo de Dijkstra usando uma matriz de adjacência?",
+        "description": "What is the time complexity of Dijkstra's algorithm using an adjacency matrix?",
         "answer": "O(V^2)",
         "difficulty": "Hard",
-        "hint": "Onde V é o número de vértices."
+        "hint": "Where V is the number of vertices."
     },
     {
         "id": 35,
-        "description": "Qual teorema afirma que é impossível um sistema distribuído garantir simultaneamente Consistência, Disponibilidade e Partição tolerante?",
-        "answer": "Teorema CAP",
+        "description": "Which theorem states that a distributed system can only provide 2 out of 3: Consistency, Availability, Partition Tolerance?",
+        "answer": "CAP Theorem",
         "difficulty": "Hard",
-        "hint": "Sigla de três letras."
+        "hint": "CAP."
     },
     {
         "id": 36,
-        "description": "Qual algoritmo de busca em grafos visita os vizinhos antes dos filhos?",
+        "description": "Which graph algorithm visits neighbors before children?",
         "answer": "BFS",
         "difficulty": "Hard",
-        "hint": "Busca em Largura (Breadth-First Search)."
+        "hint": "Breadth-First Search."
     },
     {
         "id": 37,
-        "description": "Em criptografia, RSA é um algoritmo simétrico ou assimétrico?",
-        "answer": "Assimétrico",
+        "description": "In cryptography, is RSA symmetric or asymmetric?",
+        "answer": "Asymmetric",
         "difficulty": "Hard",
-        "hint": "Usa chave pública e privada diferentes."
+        "hint": "Uses public and private keys."
     },
     {
         "id": 38,
-        "description": "Qual é a anomalia de concorrência em BD onde uma transação lê dados que ainda não foram comitados?",
+        "description": "What is the concurrency anomaly where a transaction reads uncommitted data?",
         "answer": "Dirty Read",
         "difficulty": "Hard",
-        "hint": "Leitura 'suja'."
+        "hint": "Reading 'dirty' data."
     },
     {
         "id": 39,
-        "description": "Qual o nome do ataque cibernético que sobrecarrega um servidor com tráfego falso?",
+        "description": "What type of attack floods a server with fake traffic to take it down?",
         "answer": "DDoS",
         "difficulty": "Hard",
         "hint": "Distributed Denial of Service."
     },
     {
         "id": 40,
-        "description": "Em sistemas operacionais, qual problema ocorre quando processos esperam circularmente uns pelos outros indefinidamente?",
+        "description": "In OS, what is the situation where processes wait circularily for each other forever?",
         "answer": "Deadlock",
         "difficulty": "Hard",
-        "hint": "Abraço mortal."
+        "hint": "A total standstill."
     },
     {
         "id": 41,
-        "description": "Qual técnica de otimização de IA (Machine Learning) reduz a taxa de aprendizado com o tempo para convergir mais suavemente?",
+        "description": "In Machine Learning, what technique reduces the learning rate over time to converge?",
         "answer": "Learning Rate Decay",
         "difficulty": "Hard",
-        "hint": "Decaimento da taxa."
+        "hint": "Gradual reduction."
     },
     {
         "id": 42,
-        "description": "Qual estrutura de dados probabilística verifica rapidamente se um elemento está presente em um conjunto sem armazenar o próprio elemento?",
+        "description": "Which probabilistic data structure quickly checks set membership without storing the element?",
         "answer": "Bloom Filter",
         "difficulty": "Hard",
-        "hint": "Filtro de Bloom."
+        "hint": "Possible false positives, but zero false negatives."
     },
     {
         "id": 43,
-        "description": "Qual arquitetura de rede neural é especializada no processamento de sequências (ex: texto, séries temporais) retendo 'memória' interna?",
+        "description": "Which neural network architecture is specialized for sequential data processing?",
         "answer": "RNN",
         "difficulty": "Hard",
         "hint": "Recurrent Neural Network."
     },
     {
         "id": 44,
-        "description": "Em design de software, como se chama o anti-padrão onde uma classe sabe e faz demais?",
+        "description": "In software design, what is the anti-pattern where a class knows or does too much?",
         "answer": "God Object",
         "difficulty": "Hard",
-        "hint": "Objeto 'Deus'."
+        "hint": "Like a deity in code."
     },
     {
         "id": 45,
-        "description": "Qual é a classe de complexidade computacional cujos problemas podem ser verificados em tempo polinomial, mas a solução não?",
-        "answer": "NP-Completo",
+        "description": "Which complexity class contains problems whose solutions can be verified in polynomial time?",
+        "answer": "NP-Complete",
         "difficulty": "Hard",
-        "hint": "Não Determinístico Polinomial."
+        "hint": "P vs NP."
     },
     {
         "id": 46,
-        "description": "Qual o nome do mecanismo no TCP que previne o envio excessivo de pacotes que a rede não suporta?",
-        "answer": "Controle de Congestionamento",
+        "description": "In TCP, what mechanism prevents sender from overwhelming the network?",
+        "answer": "Congestion Control",
         "difficulty": "Hard",
-        "hint": "Congestion Control."
+        "hint": "Managing traffic flow."
     },
     {
         "id": 47,
-        "description": "Em compilação, qual fase transforma a árvore sintática abstrata em código intermediário otimizado?",
-        "answer": "Otimizacao",
+        "description": "In compilation, which phase turns the AST into optimized intermediate code?",
+        "answer": "Optimization",
         "difficulty": "Hard",
-        "hint": "Ação de melhorar."
+        "hint": "Making it better."
     },
     {
         "id": 48,
-        "description": "Qual estrutura permite consultar a soma ou valor mínimo de um sub-array em O(log n) com atualizações rápidas?",
+        "description": "Which tree structure allows range sum queries and fast updates in O(log n)?",
         "answer": "Segment Tree",
         "difficulty": "Hard",
-        "hint": "Árvore de segmentos."
+        "hint": "Queries over intervals."
     },
     {
         "id": 49,
-        "description": "Em Python, o que o GIL impede de executar simultaneamente?",
+        "description": "In Python, what does the GIL prevent from executing simultaneously?",
         "answer": "Threads",
         "difficulty": "Hard",
-        "hint": "Global Interpreter Lock e multiprocessamento."
+        "hint": "Global Interpreter Lock."
     },
     {
         "id": 50,
-        "description": "Qual algoritmo de consenso é utilizado pelo protocolo Raft?",
-        "answer": "Eleicao de Lider",
+        "description": "What consensus algorithm is often used in distributed systems like Raft?",
+        "answer": "Leader Election",
         "difficulty": "Hard",
-        "hint": "Leader Election."
+        "hint": "Voting for a boss."
     }
 ]

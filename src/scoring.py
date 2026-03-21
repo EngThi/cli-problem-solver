@@ -3,7 +3,7 @@ import os
 from src.config import SCORES_FILE
 
 def load_scores():
-    """Carrega o histórico de pontuações."""
+    """Loads the scoring history."""
     if not os.path.exists(SCORES_FILE):
         return []
     
@@ -11,7 +11,7 @@ def load_scores():
         return json.load(f)
 
 def save_score(user_name, score):
-    """Salva uma nova pontuação no histórico."""
+    """Saves a new score to the history."""
     scores = load_scores()
     scores.append({
         "user": user_name,
