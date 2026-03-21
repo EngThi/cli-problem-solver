@@ -3,6 +3,7 @@ import os
 import urllib.request
 from typing import List, Dict, Optional
 
+# Available Themes
 THEMES = {
     "1": "Data Structures & Memory Management",
     "2": "Advanced Algorithms & Optimization",
@@ -12,7 +13,8 @@ THEMES = {
 }
 
 def call_gemini_api(prompt: str, is_json: bool = True) -> Optional[str]:
-    """Chamada direta para o Gemini 3.0 Flash Preview. Sem fallbacks."""
+    """Calls Gemini 3.1 Flash Lite Preview via REST API."""
+    # Using environment variable for security
     api_key = os.environ.get("GOOGLE_API_KEY", "")
     if not api_key:
         return None
@@ -22,7 +24,7 @@ def call_gemini_api(prompt: str, is_json: bool = True) -> Optional[str]:
     
     system_instruction = (
         "You are an Elite Staff Engineer. Provide deep technical content. "
-        "Return ONLY the requested format."
+        "Return ONLY the requested format (JSON array or short explanation)."
     )
     
     data = {
@@ -44,18 +46,16 @@ def call_gemini_api(prompt: str, is_json: bool = True) -> Optional[str]:
         return None
 
 def generate_ai_problems(theme_id: str) -> Optional[List[Dict]]:
-    """Gera problemas via IA. Retorna None se falhar (sem internet/chave)."""
+    """Generates 5 distinct problems via AI. Returns None on failure."""
     theme = THEMES.get(theme_id, "System Design")
     
     prompt = (
         f"Generate 5 distinct, high-level technical challenges about {theme}. "
         "Context: Real-world scenarios at Big Tech companies. "
-        "JSON Schema: [{id (string, format G3-UUID), description, answer, difficulty, hint}]. "
-        "Return ONLY raw JSON."
+        "Format: JSON array of objects {id (G3-UUID), description, answer, difficulty, hint}."
     )
 
     response_text = call_gemini_api(prompt, is_json=True)
-    
     if response_text:
         try:
             return json.loads(response_text)
@@ -64,7 +64,7 @@ def generate_ai_problems(theme_id: str) -> Optional[List[Dict]]:
     return None
 
 def get_ai_explanation(question: str, user_answer: str, correct_answer: str) -> Optional[str]:
-    """Explicação de IA. Retorna None se falhar."""
+    """AI-powered conceptual gap analysis."""
     prompt = (
         f"The user failed this question: '{question}'. "
         f"They answered '{user_answer}', but the correct answer is '{correct_answer}'. "

@@ -43,5 +43,30 @@
         "user": "name-of-user",
         "score": 1,
         "timestamp": 1772032011.701109
+    },
+    {
+        "user": "p",
+        "score": 1,
+        "timestamp": 1772032029.653109
+    },
+    {
+        "user": "p",
+        "score": 1,
+        "timestamp": 1774041224.1158886
+    },
+    {
+        "user": "p",
+        "score": 1,
+        "timestamp": 1774048828.2552333
+    },
+    {
+        "user": "TEST_BOT",
+        "score": 5,
+        "timestamp": 1774048907.0912333
+    },
+    {
+        "user": "tester",
+        "score": 1,
+        "timestamp": 1774118278.6182935
     }
 ]
