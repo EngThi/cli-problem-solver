@@ -1,28 +1,32 @@
 import json
 import os
 import urllib.request
-from typing import List, Dict
+from typing import List, Dict, Optional
 
-# Available Themes
 THEMES = {
-    "1": "Data Structures",
-    "2": "Algorithms",
-    "3": "Databases",
-    "4": "Computer Networks",
-    "5": "Operating Systems"
+    "1": "Data Structures & Memory Management",
+    "2": "Advanced Algorithms & Optimization",
+    "3": "Distributed Systems & Databases",
+    "4": "Network Protocols & Security",
+    "5": "Kernel & Operating Systems"
 }
 
-def call_gemini_api(prompt: str, is_json: bool = True) -> str:
-    """Calls Gemini API via REST (no heavy dependencies)."""
+def call_gemini_api(prompt: str, is_json: bool = True) -> Optional[str]:
+    """Chamada direta para o Gemini 3.0 Flash Preview. Sem fallbacks."""
     api_key = os.environ.get("GOOGLE_API_KEY", "")
     if not api_key:
-        return ""
+        return None
 
-    url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={api_key}"
-    
+    url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite-preview:generateContent?key={api_key}"
     headers = {'Content-Type': 'application/json'}
+    
+    system_instruction = (
+        "You are an Elite Staff Engineer. Provide deep technical content. "
+        "Return ONLY the requested format."
+    )
+    
     data = {
-        "contents": [{"parts": [{"text": prompt}]}]
+        "contents": [{"parts": [{"text": f"{system_instruction}\n\nUser Request: {prompt}"}]}]
     }
     
     if is_json:
@@ -30,21 +34,24 @@ def call_gemini_api(prompt: str, is_json: bool = True) -> str:
 
     try:
         req = urllib.request.Request(url, data=json.dumps(data).encode('utf-8'), headers=headers)
-        with urllib.request.urlopen(req) as response:
+        with urllib.request.urlopen(req, timeout=10) as response:
             result = json.loads(response.read().decode('utf-8'))
-            return result['candidates'][0]['content']['parts'][0]['text']
-    except Exception as e:
-        # Silently fail to Mock Mode
-        return ""
+            text = result['candidates'][0]['content']['parts'][0]['text']
+            if is_json:
+                text = text.replace("```json", "").replace("```", "").strip()
+            return text
+    except Exception:
+        return None
 
-def generate_ai_problems(theme_id: str) -> List[Dict]:
-    """Generates problems using Gemini REST API."""
-    theme = THEMES.get(theme_id, "General Programming")
+def generate_ai_problems(theme_id: str) -> Optional[List[Dict]]:
+    """Gera problemas via IA. Retorna None se falhar (sem internet/chave)."""
+    theme = THEMES.get(theme_id, "System Design")
     
     prompt = (
-        f"Generate 5 short technical questions about {theme}. "
-        "Return ONLY a JSON array with these fields: "
-        "id (int), description (string), answer (short string), difficulty (Easy/Medium/Hard), hint (string)."
+        f"Generate 5 distinct, high-level technical challenges about {theme}. "
+        "Context: Real-world scenarios at Big Tech companies. "
+        "JSON Schema: [{id (string, format G3-UUID), description, answer, difficulty, hint}]. "
+        "Return ONLY raw JSON."
     )
 
     response_text = call_gemini_api(prompt, is_json=True)
@@ -52,26 +59,15 @@ def generate_ai_problems(theme_id: str) -> List[Dict]:
     if response_text:
         try:
             return json.loads(response_text)
-        except json.JSONDecodeError:
-            pass
+        except:
+            return None
+    return None
 
-    # Professional Mock Mode (Fallback if API fails or No Key)
-    return [
-        {
-            "id": i,
-            "description": f"[MOCK] What is the core principle of {theme} regarding scalability?",
-            "answer": "Modularity",
-            "difficulty": "Medium",
-            "hint": "Think about 'divide and conquer'."
-        } for i in range(1, 6)
-    ]
-
-def get_ai_explanation(question: str, user_answer: str, correct_answer: str) -> str:
-    """Generates a dynamic explanation for the user's mistake."""
+def get_ai_explanation(question: str, user_answer: str, correct_answer: str) -> Optional[str]:
+    """Explicação de IA. Retorna None se falhar."""
     prompt = (
-        f"A student missed this question: '{question}'. "
-        f"They answered '{user_answer}', but the correct answer was '{correct_answer}'. "
-        "Explain in a very short, friendly way (max 2 lines) why the correct answer is right."
+        f"The user failed this question: '{question}'. "
+        f"They answered '{user_answer}', but the correct answer is '{correct_answer}'. "
+        "Explain the conceptual gap in 2 lines."
     )
-    explanation = call_gemini_api(prompt, is_json=False)
-    return explanation if explanation else f"Don't worry! Keep studying {correct_answer} concepts."
+    return call_gemini_api(prompt, is_json=False)
